@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LITRIT</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root { --brand: #0B3DB0; --sky: #4285F4; --red: #EA4335; --yellow: #FBBC05; --green: #34A853; --ink: #0B1B3A; --paper: #FFFFFF; --mist: #F2F5FC; --muted: #55607A; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+a { color: inherit; }
+button { font-family: inherit; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+h1, h2, h3 { margin: 0; letter-spacing: -0.02em; }
+.pill { display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; border: 0; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease; }
+.pill:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(11,27,58,.18); }
+.tab { border: 0; background: transparent; padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: 16px; cursor: pointer; color: var(--ink); }
+.label { margin: 0; font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+.section { padding-top: 120px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.card { background: var(--mist); border-radius: 22px; padding: 34px; }
+.body { font-size: 18px; line-height: 1.65; color: var(--muted); }
+.chip { display: inline-block; padding: 9px 16px; border-radius: 999px; background: var(--mist); font-weight: 600; font-size: 15px; color: var(--brand); white-space: nowrap; margin: 0 10px 10px 0; }
+.logos { display: flex; flex-wrap: wrap; }
+.hero-h { font-size: 92px; line-height: 1.02; font-weight: 800; max-width: 1040px; }
+@media (max-width: 860px) {
+  .grid3, .grid2 { grid-template-columns: minmax(0, 1fr) !important; }
+  .hero-h { font-size: 46px !important; }
+  .h2 { font-size: 36px !important; }
+  .tabs-nav { display: none !important; }
+  .split { grid-template-columns: minmax(0, 1fr) !important; }
+  .section { padding-top: 72px; }
+}
+</style>
+</helmet>
+
+<header class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 92px">
+  <a href="#top" aria-label="LITRIT home" style="display: flex; align-items: center; text-decoration: none">
+    <img src="/_blob/ca5f20edd800416614fc30023a752faf" alt="LITRIT" style="height: 56px; width: auto; display: block">
+  </a>
+  <nav class="tabs-nav" aria-label="Pathways" style="display: flex; align-items: center; gap: 8px; background: var(--mist); padding: 6px; border-radius: 999px">
+    <button type="button" onClick="{{ showSpark }}" aria-pressed="{{ sparkPressed }}" style="{{ sparkTabStyle }}" class="tab">SparkSale</button>
+    <button type="button" onClick="{{ showAi }}" aria-pressed="{{ aiPressed }}" style="{{ aiTabStyle }}" class="tab">AI Capability Building</button>
+  </nav>
+  <a href="#contact" class="pill" style="padding: 12px 20px; background: var(--ink); color: var(--paper); font-size: 15px">Get in touch &rarr;</a>
+</header>
+
+<sc-if value="{{ isSpark }}" hint-placeholder-val="{{ true }}">
+<main id="top">
+
+<section style="background: var(--green); color: var(--paper); padding: 110px 0 120px">
+  <div class="wrap">
+    <p class="label" style="color: #DFF5E6">For small retailers</p>
+    <h1 class="hero-h" style="margin-top: 24px">Bring customers back. <span style="color: var(--yellow)">Win back the ones you lost.</span></h1>
+    <p style="margin: 28px 0 0; max-width: 680px; font-size: 22px; line-height: 1.5; color: #EAF9EF">SparkSale is a retailer growth platform. It captures customer details, keeps in touch, recovers lapsed customers and turns happy ones into referrals, without a marketing team.</p>
+    <div style="margin-top: 44px; display: flex; gap: 14px; flex-wrap: wrap">
+      <a href="#contact" class="pill" style="background: var(--paper); color: var(--green)">Request pricing &rarr;</a>
+      <a href="#how" class="pill" style="background: transparent; color: var(--paper); border: 1.5px solid #DFF5E6">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="label" style="color: var(--green)">The problem</p>
+  <h2 class="h2" style="margin-top: 14px; font-size: 56px; font-weight: 800; line-height: 1.08; max-width: 860px">Most retailers lose customers they already had.</h2>
+  <div class="grid3" style="margin-top: 56px">
+    <div class="card" style="border-top: 6px solid var(--red)">
+      <h3 style="font-size: 24px; font-weight: 800">No record of who came in</h3>
+      <p class="body" style="margin: 12px 0 0">Customers buy once, leave, and nobody knows their name, their last visit or what they bought.</p>
+    </div>
+    <div class="card" style="border-top: 6px solid var(--yellow)">
+      <h3 style="font-size: 24px; font-weight: 800">Nobody follows up</h3>
+      <p class="body" style="margin: 12px 0 0">Reminders, offers and birthdays depend on someone remembering, so they rarely happen.</p>
+    </div>
+    <div class="card" style="border-top: 6px solid var(--green)">
+      <h3 style="font-size: 24px; font-weight: 800">Referrals go unasked</h3>
+      <p class="body" style="margin: 12px 0 0">Happy customers would bring friends, but no one asks them, and no one rewards them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section" style="background: var(--mist); margin-top: 120px; padding-bottom: 120px">
+  <div class="wrap">
+    <p class="label" style="color: var(--green)">How it works</p>
+    <h2 class="h2" style="margin-top: 14px; font-size: 56px; font-weight: 800; line-height: 1.08; max-width: 860px">Five steps. Set up once. Runs without your team.</h2>
+    <div style="margin-top: 56px; display: grid; gap: 18px">
+      <div class="card" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 24px; align-items: start"><p style="margin: 0; font-size: 40px; font-weight: 800; color: var(--green)">01</p><div><h3 style="font-size: 24px; font-weight: 800">Capture</h3><p class="body" style="margin: 8px 0 0">Collect customer details at the till, with a quick sign-up that respects consent.</p></div></div>
+      <div class="card" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 24px; align-items: start"><p style="margin: 0; font-size: 40px; font-weight: 800; color: var(--green)">02</p><div><h3 style="font-size: 24px; font-weight: 800">Connect</h3><p class="body" style="margin: 8px 0 0">Stay in touch through reminders, offers and messages timed to each customer's visits.</p></div></div>
+      <div class="card" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 24px; align-items: start"><p style="margin: 0; font-size: 40px; font-weight: 800; color: var(--green)">03</p><div><h3 style="font-size: 24px; font-weight: 800">Recover</h3><p class="body" style="margin: 8px 0 0">Spot customers who have stopped visiting and bring them back with a targeted message.</p></div></div>
+      <div class="card" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 24px; align-items: start"><p style="margin: 0; font-size: 40px; font-weight: 800; color: var(--green)">04</p><div><h3 style="font-size: 24px; font-weight: 800">Refer</h3><p class="body" style="margin: 8px 0 0">Ask happy customers to bring a friend, and track the referrals that come in.</p></div></div>
+      <div class="card" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 24px; align-items: start"><p style="margin: 0; font-size: 40px; font-weight: 800; color: var(--green)">05</p><div><h3 style="font-size: 24px; font-weight: 800">Repeat</h3><p class="body" style="margin: 8px 0 0">Build repeat visits into a routine, and measure what changed each month.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center">
+    <div>
+      <p class="label" style="color: var(--green)">What you get</p>
+      <h2 class="h2" style="margin-top: 14px; font-size: 48px; font-weight: 800; line-height: 1.1">Growth you can see on your own numbers.</h2>
+      <p class="body" style="margin: 24px 0 0">Each SparkSale setup is configured for your store, its customers and its sales. You see who came back, what they bought and what the programme added to your revenue.</p>
+    </div>
+    <div style="display: grid; gap: 16px">
+      <div style="background: var(--mist); border-radius: 18px; padding: 24px 28px"><p style="margin: 0; font-size: 14px; color: var(--muted)">Repeat visits, this quarter</p><p style="margin: 4px 0 0; font-size: 44px; font-weight: 800; color: var(--green)">[+x%]</p></div>
+      <div style="background: var(--mist); border-radius: 18px; padding: 24px 28px"><p style="margin: 0; font-size: 14px; color: var(--muted)">Lapsed customers recovered</p><p style="margin: 4px 0 0; font-size: 44px; font-weight: 800; color: var(--green)">[x]</p></div>
+      <div style="background: var(--mist); border-radius: 18px; padding: 24px 28px"><p style="margin: 0; font-size: 14px; color: var(--muted)">Referrals this month</p><p style="margin: 4px 0 0; font-size: 44px; font-weight: 800; color: var(--green)">[x]</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="label" style="color: var(--green)">Editions</p>
+  <h2 class="h2" style="margin-top: 14px; font-size: 56px; font-weight: 800; line-height: 1.08; max-width: 860px">One platform. Built for your kind of store.</h2>
+  <p class="body" style="margin: 20px 0 0; max-width: 720px">Each sector gets its own customer journey, reminders and sales workflow, on the same platform.</p>
+  <div class="grid3" style="margin-top: 56px">
+    <div class="card"><h3 style="font-size: 24px; font-weight: 800">SparkSale Optical</h3><p class="body" style="margin: 12px 0 0">Eye tests, frame refreshes, lens reminders and follow-up after every visit.</p></div>
+    <div class="card"><h3 style="font-size: 24px; font-weight: 800">SparkSale Pharmacy</h3><p class="body" style="margin: 12px 0 0">Refill reminders, health-programme follow-up and loyalty for regular customers.</p></div>
+    <div class="card"><h3 style="font-size: 24px; font-weight: 800">More sectors</h3><p class="body" style="margin: 12px 0 0">Apparel, grocery and specialty retail editions are added as the platform grows.</p></div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div style="background: var(--green); color: var(--paper); border-radius: 28px; padding: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 44px; align-items: center" class="split">
+    <div>
+      <p class="label" style="color: #DFF5E6">First result</p>
+      <h2 style="margin-top: 14px; font-size: 44px; font-weight: 800">MK Optics</h2>
+    </div>
+    <p style="margin: 0; font-size: 26px; line-height: 1.45; font-weight: 500; color: #EAF9EF">&ldquo;[Placeholder quote and measured result from MK Optics, to confirm.]&rdquo;</p>
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="label" style="color: var(--green)">Questions retailers ask</p>
+  <div class="grid2" style="margin-top: 48px">
+    <div class="card"><h3 style="font-size: 22px; font-weight: 800">Do I need a marketing team?</h3><p class="body" style="margin: 12px 0 0">No. SparkSale runs its reminders and follow-ups for you, and we handle the setup.</p></div>
+    <div class="card"><h3 style="font-size: 22px; font-weight: 800">How do you handle customer data?</h3><p class="body" style="margin: 12px 0 0">Customers opt in, and their details are used only for your store's communications. [Confirm data policy before launch.]</p></div>
+    <div class="card"><h3 style="font-size: 22px; font-weight: 800">How long does setup take?</h3><p class="body" style="margin: 12px 0 0">[Confirm typical setup time.] We configure the edition for your sector before go-live.</p></div>
+    <div class="card"><h3 style="font-size: 22px; font-weight: 800">What does it cost?</h3><p class="body" style="margin: 12px 0 0">Pricing is set per store, with a setup fee and a monthly plan. Request pricing and we will confirm it with you.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="wrap section" style="text-align: center; padding-bottom: 120px">
+  <h2 class="h2" style="font-size: 64px; font-weight: 800; line-height: 1.05; max-width: 820px; margin: 0 auto">Ready to bring your customers back?</h2>
+  <div style="margin-top: 40px"><a href="#contact" class="pill" style="background: var(--green); color: var(--paper)">Request pricing &rarr;</a></div>
+</section>
+
+</main>
+</sc-if>
+
+<sc-if value="{{ isAi }}" hint-placeholder-val="{{ false }}">
+<main id="top">
+
+<section style="background: var(--brand); color: var(--paper); padding: 110px 0 120px">
+  <div class="wrap">
+    <p class="label" style="color: #BFD3FF">For organisations</p>
+    <h1 class="hero-h" style="margin-top: 24px">Make AI part of how work gets done. <span style="color: var(--yellow)">Not just a tool people try.</span></h1>
+    <p style="margin: 28px 0 0; max-width: 680px; font-size: 22px; line-height: 1.5; color: #DCE6FF">LITRIT builds AI capability in leaders and teams, then puts AI to work in the business processes that matter.</p>
+    <div style="margin-top: 44px; display: flex; gap: 14px; flex-wrap: wrap">
+      <a href="#contact" class="pill" style="background: var(--paper); color: var(--brand)">Request a proposal &rarr;</a>
+      <a href="#offer" class="pill" style="background: transparent; color: var(--paper); border: 1.5px solid #BFD3FF">See the offer</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="label" style="color: var(--brand)">The challenge</p>
+  <h2 class="h2" style="margin-top: 14px; font-size: 56px; font-weight: 800; line-height: 1.08; max-width: 860px">Most organisations have AI awareness. Few have AI at work.</h2>
+  <div class="grid3" style="margin-top: 56px">
+    <div class="card" style="border-top: 6px solid var(--red)"><h3 style="font-size: 24px; font-weight: 800">Scattered experiments</h3><p class="body" style="margin: 12px 0 0">Pilots run in silos, with no shared approach and no clear route to scale.</p></div>
+    <div class="card" style="border-top: 6px solid var(--yellow)"><h3 style="font-size: 24px; font-weight: 800">Skills that stop at the top</h3><p class="body" style="margin: 12px 0 0">Leaders are briefed, but managers and frontline teams are left to work it out.</p></div>
+    <div class="card" style="border-top: 6px solid var(--green)"><h3 style="font-size: 24px; font-weight: 800">Workflows that never change</h3><p class="body" style="margin: 12px 0 0">Tools are bought, but the processes around them stay exactly as they were.</p></div>
+  </div>
+</section>
+
+<section id="offer" class="section" style="background: var(--mist); padding-bottom: 120px">
+  <div class="wrap">
+    <p class="label" style="color: var(--brand)">Two connected services</p>
+    <h2 class="h2" style="margin-top: 14px; font-size: 56px; font-weight: 800; line-height: 1.08; max-width: 860px">Develop the capability. Change the work.</h2>
+    <div class="grid2" style="margin-top: 56px">
+      <div style="background: var(--paper); border-radius: 24px; padding: 40px; border-top: 6px solid var(--brand)">
+        <p class="label" style="color: var(--brand)">Capability development</p>
+        <h3 style="margin-top: 12px; font-size: 32px; font-weight: 800">Hands-on training for every level</h3>
+        <p class="body" style="margin: 16px 0 0">Practical workshops built on your business scenarios, from beginner to advanced, so skills are usable the next day.</p>
+      </div>
+      <div style="background: var(--paper); border-radius: 24px; padding: 40px; border-top: 6px solid var(--sky)">
+        <p class="label" style="color: var(--sky)">Workflow implementation</p>
+        <h3 style="margin-top: 12px; font-size: 32px; font-weight: 800">AI built into how work runs</h3>
+        <p class="body" style="margin: 16px 0 0">We identify where AI pays off, redesign the workflow, configure the tools and measure the result.</p>
+      </div>
+    </div>
+    <p class="body" style="margin: 36px 0 0; max-width: 760px">Buy either service on its own, or connect them into one engagement, where training prepares people for the workflows they will change.</p>
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="label" style="color: var(--brand)">Who it is for</p>
+  <h2 class="h2" style="margin-top: 14px; font-size: 56px; font-weight: 800; line-height: 1.08; max-width: 860px">Programmes for each level of the organisation.</h2>
+  <div class="grid3" style="margin-top: 56px">
+    <div class="card"><h3 style="font-size: 22px; font-weight: 800">Boards and CxOs</h3><p class="body" style="margin: 12px 0 0">Executive AI masterclasses on decision-making, productivity and responsible use.</p></div>
+    <div class="card"><h3 style="font-size: 22px; font-weight: 800">Functional heads and team leads</h3><p class="body" style="margin: 12px 0 0">Context engineering, analytics and data-driven decisions for the people who run teams.</p></div>
+    <div class="card"><h3 style="font-size: 22px; font-weight: 800">Managers and frontline teams</h3><p class="body" style="margin: 12px 0 0">Personal productivity, prompt craft and practical use in everyday tasks.</p></div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="label" style="color: var(--brand)">Industries</p>
+  <h2 class="h2" style="margin-top: 14px; font-size: 48px; font-weight: 800; line-height: 1.1; max-width: 860px">Designed around the business, not a generic syllabus.</h2>
+  <p class="body" style="margin: 20px 0 0; max-width: 760px">Every programme is custom-built for the client's industry, challenges and participant roles. Material is private to each client.</p>
+  <div class="logos" style="margin-top: 36px">
+    <span class="chip">Banking</span><span class="chip">NBFC</span><span class="chip">Insurance</span><span class="chip">Fintech</span><span class="chip">IT services</span><span class="chip">Manufacturing</span><span class="chip">Pharma</span><span class="chip">Automotive</span><span class="chip">Engineering</span><span class="chip">Construction</span><span class="chip">Insurance brokerage</span>
+  </div>
+</section>
+
+<section class="wrap section">
+  <p class="label" style="color: var(--brand)">Clients</p>
+  <h2 class="h2" style="margin-top: 14px; font-size: 48px; font-weight: 800; line-height: 1.1">Trusted by these organisations.</h2>
+  <div class="logos" style="margin-top: 36px">
+    <span class="chip">Cognizant</span><span class="chip">Honeywell</span><span class="chip">Unity Bank</span><span class="chip">L&amp;T</span><span class="chip">Hindalco</span><span class="chip">Vedanta</span><span class="chip">Hyundai Motors</span><span class="chip">Sun Pharma</span><span class="chip">Infosys</span><span class="chip">Oracle</span><span class="chip">Citibank</span><span class="chip">ICICI Bank</span><span class="chip">Kotak Mahindra</span><span class="chip">RBL Bank</span><span class="chip">Bajaj Finance</span><span class="chip">Hiranandani Financial Services</span><span class="chip">Lightspeed India Venture Partners</span><span class="chip">AirPay</span><span class="chip">Centrum Group</span><span class="chip">Duncan &amp; Ross</span><span class="chip">Edme Insurance Brokers</span><span class="chip">Atos-Syntel</span><span class="chip">Nexdigm</span><span class="chip">State Bank of Mauritius</span><span class="chip">Capital Now</span><span class="chip">ABMCPL</span><span class="chip">Ajmera Group</span><span class="chip">Flyntrok</span><span class="chip">Women in Insurance</span><span class="chip">Sun Pharma</span>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px">
+    <div>
+      <p class="label" style="color: var(--brand)">Our approach</p>
+      <h2 class="h2" style="margin-top: 14px; font-size: 48px; font-weight: 800; line-height: 1.1">Learning that changes how people work.</h2>
+    </div>
+    <div>
+      <p class="body" style="margin: 0">Capability is not about teaching tools. It is about how people work, decide and create value.</p>
+      <p class="body" style="margin: 18px 0 0">Each programme combines business understanding with technology, and puts hands-on practice ahead of theory. Participants leave with skills they can use the next day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div style="background: var(--brand); color: var(--paper); border-radius: 28px; padding: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 44px; align-items: center" class="split">
+    <div>
+      <p class="label" style="color: #FBBC05">Background</p>
+      <h2 style="margin-top: 14px; font-size: 40px; font-weight: 800">30+ years of senior technology and business leadership.</h2>
+    </div>
+    <p style="margin: 0; font-size: 22px; line-height: 1.5; font-weight: 500; color: #DCE6FF">Former COO of a multinational IT group, with experience across operations, finance, technology and business transformation, and a record of programmes for boards, executives and teams.</p>
+  </div>
+</section>
+
+<section id="contact" class="wrap section" style="text-align: center; padding-bottom: 120px">
+  <h2 class="h2" style="font-size: 64px; font-weight: 800; line-height: 1.05; max-width: 820px; margin: 0 auto">Ready to put AI to work?</h2>
+  <div style="margin-top: 40px"><a href="#contact" class="pill" style="background: var(--brand); color: var(--paper)">Request a proposal &rarr;</a></div>
+</section>
+
+</main>
+</sc-if>
+
+<footer style="background: var(--ink); color: #C9D3E6; padding: 40px 0">
+  <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 15px">
+    <img src="/_blob/ca5f20edd800416614fc30023a752faf" alt="LITRIT" style="height: 44px; width: auto; display: block; background: var(--paper); border-radius: 12px; padding: 6px">
+    <span>Future-Ready First. Making technology work for business.</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'spark' };
+  }
+  renderVals() {
+    const tab = this.state.tab;
+    const on = (c) => `background: ${c}; color: #FFFFFF;`;
+    const off = `background: transparent; color: #0B1B3A;`;
+    return {
+      isSpark: tab === 'spark',
+      isAi: tab === 'ai',
+      sparkPressed: tab === 'spark' ? 'true' : 'false',
+      aiPressed: tab === 'ai' ? 'true' : 'false',
+      sparkTabStyle: tab === 'spark' ? on('#34A853') : off,
+      aiTabStyle: tab === 'ai' ? on('#0B3DB0') : off,
+      showSpark: () => this.setState({ tab: 'spark' }),
+      showAi: () => this.setState({ tab: 'ai' }),
+    };
+  }
+}
+</script>
+</body>
+</html>
