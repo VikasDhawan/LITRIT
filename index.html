@@ -29,7 +29,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.08; }
 .tabs { display: flex; align-items: center; gap: 6px; background: var(--mist); padding: 6px; border-radius: 999px; flex-wrap: wrap; }
 .header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; flex-wrap: wrap; }
 .header img.logo { height: 56px; width: auto; display: block; }
-.header .cta { align-self: center; height: auto; flex: 0 0 auto; white-space: nowrap; }
+.header .header-cta { align-self: center; height: auto; flex: 0 0 auto; white-space: nowrap; }
 .header .tabs { flex: 0 1 auto; }
 .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -91,7 +91,7 @@ footer a { color: #DCE6FF; }
   .grid3, .grid2, .split, .proof { grid-template-columns: minmax(0, 1fr) !important; }
   .wrap { padding: 0 20px; }
   .header { height: auto; padding: 16px 0; }
-  .header .cta { display: none; }
+  .header .header-cta { display: none; }
   .header img.logo { height: 44px; }
   .tabs { width: 100%; justify-content: center; }
   .tab { flex: 1 1 auto; padding: 10px 14px; font-size: 14px; }
@@ -118,7 +118,7 @@ footer a { color: #DCE6FF; }
     <button class="tab spark" id="tab-spark" role="tab" aria-selected="true" aria-controls="sparksale" data-page="sparksale">SparkSale</button>
     <button class="tab ai" id="tab-ai" role="tab" aria-selected="false" aria-controls="ai" data-page="ai">AI Capability Building</button>
   </div>
-  <a class="pill green cta" href="mailto:vikas.d@litrit.xyz?subject=LITRIT%20enquiry">Get in touch &rarr;</a>
+  <a class="pill green header-cta" href="mailto:vikas.d@litrit.xyz?subject=LITRIT%20enquiry">Get in touch &rarr;</a>
 </header>
 
 <!-- SparkSale: for small retailers -->
