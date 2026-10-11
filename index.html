@@ -91,7 +91,6 @@ footer a { color: #DCE6FF; }
   .grid3, .grid2, .split, .proof { grid-template-columns: minmax(0, 1fr) !important; }
   .wrap { padding: 0 20px; }
   .header { height: auto; padding: 16px 0; }
-  .header .header-cta { display: none; }
   .header img.logo { height: 44px; }
   .tabs { width: 100%; justify-content: center; }
   .tab { flex: 1 1 auto; padding: 10px 14px; font-size: 14px; }
@@ -118,7 +117,8 @@ footer a { color: #DCE6FF; }
     <button class="tab spark" id="tab-spark" role="tab" aria-selected="true" aria-controls="sparksale" data-page="sparksale">SparkSale</button>
     <button class="tab ai" id="tab-ai" role="tab" aria-selected="false" aria-controls="ai" data-page="ai">AI Capability Building</button>
   </div>
-  <a class="pill green header-cta" href="mailto:vikas.d@litrit.xyz?subject=LITRIT%20enquiry">Get in touch &rarr;</a>
+  <a class="pill green header-cta" data-for="sparksale" href="https://wa.me/919673689933?text=Hi%20LITRIT%2C%20I%27d%20like%20to%20know%20more%20about%20SparkSale">Chat on WhatsApp &rarr;</a>
+  <a class="pill brand header-cta" data-for="ai" href="mailto:vikas.d@litrit.xyz?subject=AI%20capability%20enquiry" hidden>Email us &rarr;</a>
 </header>
 
 <!-- SparkSale: for small retailers -->
@@ -131,8 +131,8 @@ footer a { color: #DCE6FF; }
     <p class="lead">An AI-enabled growth platform that helps small retailers reconnect with customers, recover missed sales, and turn customer relationships into business growth.</p>
     <p class="label" style="margin-top: 24px; color: #DFF5E6; letter-spacing: .08em">Built for retailers. Powered by data, automation, and AI.</p>
     <div class="actions">
-      <a href="#sparksale-how" class="pill light">Know more about SparkSale &rarr;</a>
-      <a href="https://wa.me/919673689933" class="pill ghost">WhatsApp LITRIT</a>
+      <a href="https://wa.me/919673689933?text=Hi%20LITRIT%2C%20I%27d%20like%20to%20know%20more%20about%20SparkSale" class="pill light">Chat with us on WhatsApp &rarr;</a>
+      <a href="#sparksale-how" class="pill ghost">Know more about SparkSale</a>
     </div>
   </div>
 </section>
@@ -142,8 +142,8 @@ footer a { color: #DCE6FF; }
   <p class="body" style="margin-top: 24px; max-width: 760px">SparkSale helps small retailers attract customers, encourage repeat visits, recover missed sales opportunities, and grow their business through intelligent customer engagement.</p>
   <p class="body" style="margin-top: 16px; max-width: 760px; color: var(--ink); font-weight: 700">More than marketing. A smarter way to grow your retail business.</p>
   <div class="actions" style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap">
-    <a href="#sparksale-how" class="pill green">Know more about SparkSale &rarr;</a>
-    <a href="https://wa.me/919673689933" class="pill brand">WhatsApp LITRIT</a>
+    <a href="https://wa.me/919673689933?text=Hi%20LITRIT%2C%20I%27d%20like%20to%20know%20more%20about%20SparkSale" class="pill green">Chat with us on WhatsApp &rarr;</a>
+    <a href="#sparksale-how" class="pill brand">Know more about SparkSale</a>
   </div>
 </section>
 
@@ -223,7 +223,7 @@ footer a { color: #DCE6FF; }
 <section class="wrap cta">
   <h2>Let's talk growth.</h2>
   <p class="body" style="margin: 24px auto 0; max-width: 680px">Discover how SparkSale could help your retail business build stronger customer relationships and generate more revenue.</p>
-  <div class="actions"><a href="mailto:vikas.d@litrit.xyz?subject=SparkSale%20enquiry" class="pill green">Talk to us about SparkSale &rarr;</a></div>
+  <div class="actions"><a href="https://wa.me/919673689933?text=Hi%20LITRIT%2C%20I%27d%20like%20to%20know%20more%20about%20SparkSale" class="pill green">Chat with us on WhatsApp &rarr;</a></div>
 </section>
 
 </main>
@@ -348,6 +348,9 @@ footer a { color: #DCE6FF; }
     });
     tabs.forEach(function (tab) {
       tab.setAttribute('aria-selected', tab.getAttribute('data-page') === page ? 'true' : 'false');
+    });
+    document.querySelectorAll('[data-for]').forEach(function (el) {
+      el.hidden = el.getAttribute('data-for') !== page;
     });
     window.scrollTo(0, 0);
   }
