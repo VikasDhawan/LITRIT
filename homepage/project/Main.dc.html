@@ -30,32 +30,46 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.02em; }
 .chip { display: inline-block; padding: 9px 16px; border-radius: 999px; background: var(--mist); font-weight: 600; font-size: 15px; color: var(--brand); white-space: nowrap; margin: 0 10px 10px 0; }
 .logos { display: flex; flex-wrap: wrap; }
 .hero-h { font-size: 92px; line-height: 1.02; font-weight: 800; max-width: 1040px; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; flex-wrap: wrap; }
+.tabs-nav { display: flex; align-items: center; gap: 6px; background: var(--mist); padding: 6px; border-radius: 999px; flex-wrap: wrap; }
+.tab { white-space: nowrap; }
 @media (max-width: 860px) {
   .grid3, .grid2 { grid-template-columns: minmax(0, 1fr) !important; }
-  .hero-h { font-size: 46px !important; }
-  .h2 { font-size: 36px !important; }
-  .tabs-nav { display: none !important; }
-  .split { grid-template-columns: minmax(0, 1fr) !important; }
-  .section { padding-top: 72px; }
+  .steps-row { grid-template-columns: minmax(0, 1fr) !important; }
+  .hero-h { font-size: 44px !important; }
+  .h2 { font-size: 34px !important; }
+  .split { grid-template-columns: minmax(0, 1fr) !important; gap: 28px !important; }
+  .section { padding-top: 64px !important; }
+  .hero-pad { padding: 64px 0 72px !important; }
+  .wrap { padding: 0 20px !important; }
+  .header { height: auto !important; padding: 16px 0; }
+  .header .cta { display: none !important; }
+  .header img { height: 44px !important; }
+  .tabs-nav { width: 100%; justify-content: center; }
+  .tab { flex: 1 1 auto; padding: 10px 14px !important; font-size: 14px !important; }
+  .card { padding: 26px !important; }
+  .cta-row { flex-direction: column; align-items: stretch; }
+  .cta-row .pill { justify-content: center; }
+  .proof-box { padding: 36px 26px !important; }
 }
 </style>
 </helmet>
 
-<header class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 92px">
+<header class="wrap header">
   <a href="#top" aria-label="LITRIT home" style="display: flex; align-items: center; text-decoration: none">
     <img src="/_blob/ca5f20edd800416614fc30023a752faf" alt="LITRIT" style="height: 56px; width: auto; display: block">
   </a>
-  <nav class="tabs-nav" aria-label="Pathways" style="display: flex; align-items: center; gap: 8px; background: var(--mist); padding: 6px; border-radius: 999px">
+  <nav class="tabs-nav" aria-label="Pathways">
     <button type="button" onClick="{{ showSpark }}" aria-pressed="{{ sparkPressed }}" style="{{ sparkTabStyle }}" class="tab">SparkSale</button>
     <button type="button" onClick="{{ showAi }}" aria-pressed="{{ aiPressed }}" style="{{ aiTabStyle }}" class="tab">AI Capability Building</button>
   </nav>
-  <a href="#contact" class="pill" style="padding: 12px 20px; background: var(--ink); color: var(--paper); font-size: 15px">Get in touch &rarr;</a>
+  <a href="#contact" class="pill cta" style="padding: 12px 20px; background: var(--ink); color: var(--paper); font-size: 15px">Get in touch &rarr;</a>
 </header>
 
 <sc-if value="{{ isSpark }}" hint-placeholder-val="{{ true }}">
 <main id="top">
 
-<section style="background: var(--green); color: var(--paper); padding: 110px 0 120px">
+<section class="hero-pad" style="background: var(--green); color: var(--paper); padding: 110px 0 120px">
   <div class="wrap">
     <p class="label" style="color: #DFF5E6">For small retailers</p>
     <h1 class="hero-h" style="margin-top: 24px">Bring customers back. <span style="color: var(--yellow)">Win back the ones you lost.</span></h1>
@@ -127,7 +141,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.02em; }
 </section>
 
 <section class="wrap section">
-  <div style="background: var(--green); color: var(--paper); border-radius: 28px; padding: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 44px; align-items: center" class="split">
+  <div class="split proof-box" style="background: var(--green); color: var(--paper); border-radius: 28px; padding: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 44px; align-items: center">
     <div>
       <p class="label" style="color: #DFF5E6">First result</p>
       <h2 style="margin-top: 14px; font-size: 44px; font-weight: 800">MK Optics</h2>
@@ -157,7 +171,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.02em; }
 <sc-if value="{{ isAi }}" hint-placeholder-val="{{ false }}">
 <main id="top">
 
-<section style="background: var(--brand); color: var(--paper); padding: 110px 0 120px">
+<section class="hero-pad" style="background: var(--brand); color: var(--paper); padding: 110px 0 120px">
   <div class="wrap">
     <p class="label" style="color: #BFD3FF">For organisations</p>
     <h1 class="hero-h" style="margin-top: 24px">Make AI part of how work gets done. <span style="color: var(--yellow)">Not just a tool people try.</span></h1>
@@ -240,7 +254,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.02em; }
 </section>
 
 <section class="wrap section">
-  <div style="background: var(--brand); color: var(--paper); border-radius: 28px; padding: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 44px; align-items: center" class="split">
+  <div class="split proof-box" style="background: var(--brand); color: var(--paper); border-radius: 28px; padding: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 44px; align-items: center">
     <div>
       <p class="label" style="color: #FBBC05">Background</p>
       <h2 style="margin-top: 14px; font-size: 40px; font-weight: 800">30+ years of senior technology and business leadership.</h2>
